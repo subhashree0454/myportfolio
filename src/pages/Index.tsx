@@ -9,12 +9,14 @@ import {
   Globe,
   Linkedin,
   Mail,
+  Menu,
   Moon,
   Rocket,
   Send,
   Sparkles,
   Sun,
   Wrench,
+  X,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -299,6 +301,7 @@ const Index = () => {
   const [activePhrase, setActivePhrase] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [isDeletingText, setIsDeletingText] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mailData, setMailData] = useState({ name: "", email: "", message: "" });
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
@@ -443,11 +446,45 @@ const Index = () => {
             >
               {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
-            <Button asChild size="lg" className="bg-brand text-brand-foreground hover:bg-brand/90 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand/25 px-6 font-bold text-base tracking-tight rounded-full">
+            <Button asChild size="lg" className="hidden sm:flex bg-brand text-brand-foreground hover:bg-brand/90 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand/25 px-6 font-bold text-base tracking-tight rounded-full">
               <a href="#contact">Hire Me</a>
+            </Button>
+            <Button
+              type="button"
+              size="icon"
+              variant="ghost"
+              className="md:hidden text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
+
+        {/* Mobile Nav Overlay */}
+        <motion.div
+          initial={{ opacity: 0, x: "100%" }}
+          animate={{ opacity: isMobileMenuOpen ? 1 : 0, x: isMobileMenuOpen ? 0 : "100%" }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          className="fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-2xl md:hidden"
+        >
+          <nav className="flex flex-col items-center justify-center h-full gap-8 p-6">
+            {navLinks.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-2xl font-bold tracking-[0.1em] text-foreground hover:text-brand"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+            <Button asChild size="lg" className="mt-4 bg-brand text-brand-foreground rounded-full px-12 font-bold w-full max-w-xs shadow-xl shadow-brand/20">
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Let's Connect</a>
+            </Button>
+          </nav>
+        </motion.div>
       </header>
 
       <main>
@@ -641,7 +678,7 @@ const Index = () => {
           <span className="section-label">
             <TypewriterText text="Technical Arsenal" reducedMotion={prefersReducedMotion} speed={30} />
           </span>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4 px-2 sm:px-0">
             {skillGroups.map((group, idx) => (
               <motion.div
                 key={group.label}
