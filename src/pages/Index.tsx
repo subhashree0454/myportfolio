@@ -545,7 +545,7 @@ const Index = () => {
                   <a href="#contact">Build My Project <ArrowUpRight className="ml-2 h-4 w-4" /></a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-glass-border/25 bg-surface/60 hover:bg-surface-alt backdrop-blur-sm rounded-full px-8 font-semibold">
-                  <a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer">
+                  <a href="https://drive.google.com/file/d/1GQjN9FAbbJsH6SQi0DXZRl21gj46oFes/view?usp=sharing" target="_blank" rel="noreferrer">
                     Download Resume
                   </a>
                 </Button>
@@ -957,8 +957,8 @@ const Index = () => {
                 <p className="text-sm text-foreground leading-relaxed">
                   I'm currently seeking <span className="font-bold">Software Engineer / Java Backend</span> roles where I can contribute to complex systems and grow with a world-class engineering team.
                 </p>
-                <Button asChild className="mt-6 w-full bg-foreground text-background hover:bg-foreground/90">
-                  <a href="https://example.com/resume.pdf" target="_blank">Download Resume</a>
+                <Button asChild className="mt-6 w-full bg-foreground text-background hover:bg-foreground/90 rounded-full">
+                  <a href="https://drive.google.com/file/d/1GQjN9FAbbJsH6SQi0DXZRl21gj46oFes/view?usp=sharing" target="_blank" rel="noreferrer">Download Resume</a>
                 </Button>
               </div>
             </motion.div>
