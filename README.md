@@ -8,6 +8,10 @@ Welcome to my digital space! This is a state-of-the-art, cosmic-themed portfolio
 
 ![Portfolio Demo](./public/portfolio-demo.gif)
 
+## 🌐 Live Demo
+
+You can view the live version of my portfolio here: **[https://subhashree0454.github.io/myportfolio/](https://subhashree0454.github.io/myportfolio/)**
+
 ## 🌌 Features
 
 - **Cosmic UI/UX**: A dark-themed, immersive experience with grid backgrounds and neon accents.
