@@ -454,37 +454,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Mobile Nav Overlay */}
-        <motion.div
-          initial={{ opacity: 0, x: "100%" }}
-          animate={{ opacity: isMobileMenuOpen ? 1 : 0, x: isMobileMenuOpen ? 0 : "100%" }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed inset-0 z-[60] bg-background/98 md:hidden"
-        >
-          <div className="flex flex-col h-full">
-            <div className="flex items-center justify-between p-6 h-16 border-b border-glass-border/10">
-              <span className="text-xl font-bold uppercase tracking-[0.3em] text-cosmic">Subh.</span>
-              <Button size="icon" variant="ghost" onClick={() => setIsMobileMenuOpen(false)}>
-                <X className="h-6 w-6" />
-              </Button>
-            </div>
-            <nav className="flex flex-col items-center justify-center flex-1 gap-8 p-6">
-              {navLinks.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-3xl font-bold tracking-[0.1em] text-foreground hover:text-brand active:scale-90 transition-transform"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <Button asChild size="lg" className="mt-8 bg-brand text-brand-foreground rounded-full px-12 font-bold w-full max-w-xs shadow-2xl shadow-brand/30">
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Let's Connect</a>
-              </Button>
-            </nav>
-          </div>
-        </motion.div>
       </header>
 
       {/* Modern Floating Bottom Nav for Mobile Reachability */}
