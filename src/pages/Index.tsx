@@ -441,23 +441,15 @@ const Index = () => {
               size="icon"
               variant="outline"
               onClick={handleThemeToggle}
-              className="border-glass-border/25 bg-surface/60 hover:bg-surface-alt"
+              className="border-glass-border/25 bg-surface/60 hover:bg-surface-alt rounded-full h-10 w-10 flex items-center justify-center p-0"
               aria-label="Toggle color mode"
             >
-              {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              <div className="flex items-center justify-center">
+                {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </div>
             </Button>
             <Button asChild size="lg" className="hidden sm:flex bg-brand text-brand-foreground hover:bg-brand/90 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand/25 px-6 font-bold text-base tracking-tight rounded-full">
               <a href="#contact">Hire Me</a>
-            </Button>
-            <Button
-              type="button"
-              size="icon"
-              variant="ghost"
-              className="md:hidden text-foreground"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
@@ -497,14 +489,14 @@ const Index = () => {
 
       {/* Modern Floating Bottom Nav for Mobile Reachability */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] w-full max-w-[92vw] sm:max-w-sm md:hidden">
-        <div className="glass-panel border-glass-border/20 bg-background/60 backdrop-blur-2xl rounded-full p-1.5 flex items-center justify-around shadow-2xl shadow-black/40">
-          {navLinks.slice(0, 4).map((link) => (
+        <div className="glass-panel border-glass-border/20 bg-background/60 backdrop-blur-3xl rounded-full p-1.5 flex items-center justify-around shadow-2xl shadow-black/60">
+          {navLinks.slice(0, 5).map((link) => (
             <a
               key={link.href}
               href={link.href}
               className="flex flex-col items-center gap-1 p-1.5 text-muted-foreground hover:text-brand active:scale-90 transition-all font-bold"
             >
-              <span className="text-[9px] uppercase tracking-tighter">{link.label}</span>
+              <span className="text-[8px] uppercase tracking-tighter">{link.label}</span>
             </a>
           ))}
           <div className="h-6 w-px bg-glass-border/20 mx-1" />
