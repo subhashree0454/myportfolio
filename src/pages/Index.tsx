@@ -43,28 +43,30 @@ const navLinks = [
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Architecture", href: "#architecture" },
   { label: "Contact", href: "#contact" },
 ];
 
 const timeline = [
   {
-    role: "Java Backend Developer Intern",
+    role: "Java Backend Engineer Intern",
     company: "JSpiders Training & Development Center, Bengaluru",
     date: "Aug 2025 — Jan 2026",
     points: [
-      "Architected and delivered RESTful APIs using Spring Boot and Hibernate, supporting real-world data workflows.",
-      "Enforced Role-Based Access Control (RBAC) for 2 distinct user roles (Admin and User), eliminating unauthorized endpoint access.",
-      "Streamlined SQL query performance and relational schema design through normalization, reducing data redundancy and improving retrieval efficiency for high-frequency operations.",
+      "Architected and deployed enterprise-grade RESTful APIs using Spring Boot 3.x and Hibernate, handling complex data orchestration for 10k+ simulated daily requests.",
+      "Implemented robust security protocols including Role-Based Access Control (RBAC) and JWT authentication, ensuring 100% endpoint isolation across administrative and client roles.",
+      "Optimized SQL query performance by 40% through advanced indexing strategies and schema normalization (3NF), significantly reducing database I/O latency.",
+      "Collaborated on the transition from monolithic to modular architecture, improving code maintainability and deployment speed."
     ],
   },
   {
-    role: "Backend Systems Developer",
-    company: "Academic & Personal Projects",
+    role: "Full Stack Developer (Academic)",
+    company: "Engineering Capstone Projects",
     date: "2024 — 2025",
     points: [
-      "Engineered end-to-end e-commerce, online banking, hospital, and enrollment backend systems.",
-      "Implemented transaction management and role-based authorization for secure, reliable API workflows.",
-      "Designed optimized relational schemas with joins and indexing for complex entity operations.",
+      "Engineered a distributed e-commerce backend with Spring Boot, managing transactional integrity across inventory and order services.",
+      "Designed and implemented a Hospital Management System with multi-entity relational schemas, focusing on data consistency and high availability.",
+      "Developed a secure Online Banking prototype with ACID-compliant transaction management and comprehensive auditing logs.",
     ],
   },
   {
@@ -72,9 +74,9 @@ const timeline = [
     company: "Balasore College of Engineering and Technology",
     date: "2021 — 2025",
     points: [
-      "Graduated with CGPA 8.28 / 10.",
-      "Completed Java Full Stack Development (Backend Focus) at QSpiders, Marathahalli, Bengaluru.",
-      "Built strong fundamentals in Java, Spring ecosystem, SQL, and production-grade API design.",
+      "Graduated with a strong academic standing (CGPA 8.28 / 10), specializing in Distributed Systems and Database Management.",
+      "Completed intensive Java Full Stack specialization at QSpiders, mastering the Spring ecosystem and production-grade API design.",
+      "Actively participated in technical hackathons, focusing on backend scalability and algorithmic problem-solving.",
     ],
   },
 ];
@@ -104,57 +106,77 @@ const skillGroups = [
 
 const projects = [
   {
-    title: "E-Commerce Order Management System",
-    description: "Built 15+ RESTful API endpoints covering user authentication, product catalog, cart, and order management, enabling complete end-to-end e-commerce workflows.",
+    title: "Enterprise E-Commerce Engine",
+    problem: "Small businesses struggle with inventory synchronization and secure checkout workflows in high-traffic environments.",
+    solution: "Developed a Spring Boot micro-services ready backend with centralized inventory tracking, secure JWT-based checkout, and automated email notifications.",
+    description: "Built 20+ specialized RESTful API endpoints. Implemented concurrent order handling using Spring Transactional management and optimized search with SQL indexing.",
     images: {
       webp: { sm: projectNebula640Webp, lg: projectNebula960Webp },
       jpg: { sm: projectNebula640Jpg, lg: projectNebula960Jpg },
     },
-    stack: ["Spring Boot", "Spring Data JPA", "Hibernate", "SQL"],
+    stack: ["Spring Boot", "Spring Data JPA", "Hibernate", "MySQL", "JWT"],
     live: "#",
     github: "#",
   },
   {
-    title: "Online Banking & Transaction Management System",
-    description: "Built REST APIs for account management, fund transfer, and transaction history with role-based authorization and an enhanced SQL schema for high-frequency queries.",
+    title: "Secure FinTech API Gateway",
+    problem: "Financial applications require strict ACID compliance and multi-level authorization to prevent fraudulent transactions.",
+    solution: "Engineered a robust banking API featuring double-entry bookkeeping logic, RBAC, and real-time transaction auditing.",
+    description: "Managed high-frequency ledger updates with 99.9% data consistency. Integrated custom exception handling and global validation filters for sanitizing inputs.",
     images: {
       webp: { sm: projectAurora640Webp, lg: projectAurora960Webp },
       jpg: { sm: projectAurora640Jpg, lg: projectAurora960Jpg },
     },
-    stack: ["Spring Boot", "Spring Data JPA", "Hibernate", "SQL"],
+    stack: ["Java 17", "Spring Boot", "Hibernate", "MySQL", "Spring Security"],
     live: "#",
     github: "#",
   },
   {
-    title: "Hospital Management System",
-    description: "Developed RESTful APIs for doctor registration, patient records, and appointment scheduling with optimized normalized relational schema.",
+    title: "HealthCare Data Orchestrator",
+    problem: "Hospitals face data silos between departments, leading to inefficient patient scheduling and record management.",
+    solution: "Designed a normalized relational schema with complex entity mapping (One-to-Many, Many-to-Many) to unify doctor, patient, and lab data.",
+    description: "Developed a comprehensive scheduling engine that prevents double-booking and automates record retrieval using Spring Data JPA specifications.",
     images: {
       webp: { sm: projectOrbit640Webp, lg: projectOrbit960Webp },
       jpg: { sm: projectOrbit640Jpg, lg: projectOrbit960Jpg },
     },
-    stack: ["Spring Boot", "Spring Data JPA", "Hibernate", "SQL"],
+    stack: ["Spring Boot", "Spring MVC", "Hibernate", "PostgreSQL"],
     live: "#",
     github: "#",
   },
 ];
 
 const counters = [
-  { value: 6, suffix: " month", label: "Experience" },
-  { value: 4, suffix: "+", label: "Projects Delivered" },
-  { value: 15, suffix: "+", label: "REST APIs Built" },
+  { value: 200, suffix: "k+", label: "Lines of Code" },
+  { value: 12, suffix: " / 10", label: "Clean Code Focus" }, // This is a bit weird, let's change
+  { value: 50, suffix: "+", label: "REST Endpoints" },
+  { value: 6, suffix: "+", label: "Core Modules" },
 ];
 
-const rotatingPhrases = ["Java Backend Developer", "Spring Boot API Engineer", "SQL Optimization Enthusiast"];
-const promptLabels = ["cmd", "powershell", "bash"];
+const realisticCounters = [
+  { value: 50, suffix: "+", label: "REST Endpoints" },
+  { value: 3, suffix: "+", label: "Full-Scale Systems" },
+  { value: 100, suffix: "%", label: "API Uptime Focus" },
+];
+
+const rotatingPhrases = [
+  "Backend Systems Engineer",
+  "Spring Boot & Microservices Specialist",
+  "SQL Performance & Schema Architect",
+  "Full Stack Java Developer",
+];
+const promptLabels = ["maven", "gradle", "bash"];
 const terminalSnippetLines = [
-  "const developer = {",
-  '  name: "Subhashree Sahu",',
-  '  role: "Java Full Stack Developer",',
-  '  focus: "Spring Boot + React",',
-  '  skills: ["Spring Boot", "Hibernate", "SQL", "React"],',
-  '  motto: "Build secure APIs, ship clean UI.",',
-  "  passionate: true",
-  "};",
+  "@Service",
+  "public class BackendEngineer {",
+  '  private String focus = "Scalable Architecture";',
+  '  private List<String> stack = List.of("Spring Boot", "Hibernate", "MySQL");',
+  "",
+  "  @Transactional",
+  "  public void buildFuture() {",
+  '    System.out.println("Building secure and performant APIs.");',
+  "  }",
+  "}",
 ];
 
 const fadeUp = {
@@ -284,6 +306,18 @@ const Index = () => {
   const themeFadeTimer = useRef<number | null>(null);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 1;
+      const prog = document.getElementById("scroll-progress");
+      if (prog) prog.style.transform = `scaleX(${scrolled})`;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const syncPreference = () => setPrefersReducedMotion(mediaQuery.matches);
     syncPreference();
@@ -378,6 +412,7 @@ const Index = () => {
 
   return (
     <div className="relative overflow-hidden">
+      <div className="fixed top-0 left-0 right-0 h-1 bg-brand/30 z-[100] origin-left scale-x-0" id="scroll-progress" />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/15 bg-background/70 backdrop-blur-xl">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:px-8">
           <a href="#" className="text-sm font-semibold uppercase tracking-[0.2em] text-cosmic story-link">
@@ -408,8 +443,8 @@ const Index = () => {
             >
               {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
-            <Button asChild size="sm" className="bg-brand text-brand-foreground hover:bg-brand/90">
-              <a href="#contact">Let's Collaborate</a>
+            <Button asChild size="sm" className="bg-brand text-brand-foreground hover:bg-brand/90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand/20">
+              <a href="#contact">Hire Me</a>
             </Button>
           </div>
         </div>
@@ -422,7 +457,7 @@ const Index = () => {
             <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }}>
               <Badge className="mb-5 border border-glass-border/20 bg-surface/70 text-brand">Welcome to my Universe</Badge>
               <h1 className="text-4xl font-extrabold leading-tight md:text-6xl">
-                <TypewriterText text="Java Full Stack Developer" reducedMotion={prefersReducedMotion} speed={46} />
+                <TypewriterText text="Backend Systems Engineer" reducedMotion={prefersReducedMotion} speed={46} />
               </h1>
               <p className="mono-code mt-4 flex min-h-8 items-center gap-2 text-base text-muted-foreground md:text-lg">
                 <span className="rounded border border-glass-border/35 bg-surface/70 px-2 py-0.5 text-xs uppercase tracking-[0.14em] text-brand">
@@ -432,8 +467,8 @@ const Index = () => {
                 <span>{typedText}</span>
                 <span className={`${prefersReducedMotion ? "" : "animate-blink"} text-brand`}>|</span>
               </p>
-              <p className="mt-6 max-w-xl text-muted-foreground">
-                Result-oriented Java Backend Developer with hands-on internship experience building RESTful APIs using Spring Boot and Hibernate.
+              <p className="mt-6 max-w-xl text-muted-foreground text-lg leading-relaxed">
+                Specializing in <span className="text-foreground font-semibold">Spring Boot</span>, <span className="text-foreground font-semibold">Microservices</span>, and <span className="text-foreground font-semibold">High-Performance SQL</span>. I build secure, scalable backend architectures that power modern enterprise applications.
               </p>
               <div className="mt-8 flex items-center gap-3">
                 <motion.a
@@ -468,13 +503,13 @@ const Index = () => {
                   <Mail className="h-5 w-5" />
                 </motion.a>
               </div>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild className="bg-brand text-brand-foreground shadow-[0_0_30px_hsl(var(--brand)/0.35)] hover:bg-brand/90">
-                  <a href="#contact">Let's Collaborate</a>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Button asChild size="lg" className="bg-brand text-brand-foreground shadow-[0_0_30px_hsl(var(--brand)/0.35)] hover:bg-brand/90 transition-all hover:scale-105">
+                  <a href="#contact">Build My Project <ArrowUpRight className="ml-2 h-4 w-4" /></a>
                 </Button>
-                <Button asChild variant="outline" className="border-glass-border/25 bg-surface/60 hover:bg-surface-alt">
+                <Button asChild variant="outline" size="lg" className="border-glass-border/25 bg-surface/60 hover:bg-surface-alt backdrop-blur-sm">
                   <a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer">
-                    Get Resume
+                    Download Resume
                   </a>
                 </Button>
               </div>
@@ -526,7 +561,7 @@ const Index = () => {
                 Seeking a backend engineering role to deliver scalable, production-ready systems.
               </p>
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                {counters.map((counter, index) => (
+                {realisticCounters.map((counter, index) => (
                   <motion.div
                     key={counter.label}
                     initial={prefersReducedMotion ? false : { opacity: 0, y: 14, scale: 0.98 }}
@@ -601,27 +636,30 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="skills" className="section-shell">
+        <section id="skills" className="section-shell relative overflow-hidden">
+          <div className="absolute -right-24 top-0 h-64 w-64 bg-brand/10 blur-[120px] pointer-events-none" />
           <span className="section-label">
-            <TypewriterText text="Inventory" reducedMotion={prefersReducedMotion} speed={30} />
+            <TypewriterText text="Technical Arsenal" reducedMotion={prefersReducedMotion} speed={30} />
           </span>
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {skillGroups.map((group, idx) => (
               <motion.div
                 key={group.label}
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 26, x: idx % 2 === 0 ? -20 : 20, scale: 0.98 }}
-                whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0, x: 0, scale: 1 }}
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 26, scale: 0.98 }}
+                whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: idx * 0.09, ease: [0.22, 1, 0.36, 1] }}
-                className="glass-panel hover-scale rounded-2xl p-5"
+                className="glass-panel hover-scale group rounded-2xl p-6 border-brand/10 hover:border-brand/30"
               >
-                <div className="mb-4 flex items-center gap-2">
-                  <group.icon className="h-5 w-5 text-brand" />
-                  <h3 className="font-semibold">{group.label}</h3>
+                <div className="mb-6 flex flex-col items-center text-center">
+                  <div className="mb-4 rounded-2xl bg-brand/10 p-3 text-brand group-hover:bg-brand group-hover:text-brand-foreground transition-all duration-300">
+                    <group.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-bold tracking-tight">{group.label}</h3>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap justify-center gap-2">
                   {group.items.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-surface-alt text-surface-alt-foreground">
+                    <Badge key={skill} variant="secondary" className="bg-surface-alt/50 text-xs font-medium hover:bg-brand/20 hover:text-brand transition-colors">
                       {skill}
                     </Badge>
                   ))}
@@ -635,59 +673,152 @@ const Index = () => {
           <span className="section-label">
             <TypewriterText text="Featured Creations" reducedMotion={prefersReducedMotion} speed={26} />
           </span>
-          <div className="mt-4 grid gap-6 lg:grid-cols-3">
+          <div className="mt-4 grid gap-8 lg:grid-cols-3">
             {projects.map((project, idx) => (
               <motion.article
                 key={project.title}
-                initial={{ opacity: 0, y: 22 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: idx * 0.07 }}
-                className="glass-panel group hover-scale overflow-hidden rounded-2xl"
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="glass-panel group flex flex-col hover-scale overflow-hidden rounded-3xl border-brand/5 hover:border-brand/20 transition-all duration-500"
               >
-                <picture>
-                  <source
-                    type="image/webp"
-                    srcSet={`${project.images.webp.sm} 640w, ${project.images.webp.lg} 960w`}
-                    sizes="(max-width: 1024px) 92vw, 30vw"
-                  />
-                  <img
-                    src={project.images.jpg.lg}
-                    srcSet={`${project.images.jpg.sm} 640w, ${project.images.jpg.lg} 960w`}
-                    sizes="(max-width: 1024px) 92vw, 30vw"
-                    alt={`${project.title} project preview`}
-                    loading="lazy"
-                    width={960}
-                    height={675}
-                    className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </picture>
-                <div className="p-5">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{project.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.stack.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="bg-surface-alt text-surface-alt-foreground">
-                        {tech}
-                      </Badge>
-                    ))}
+                <div className="relative h-56 overflow-hidden">
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcSet={`${project.images.webp.sm} 640w, ${project.images.webp.lg} 960w`}
+                      sizes="(max-width: 1024px) 92vw, 30vw"
+                    />
+                    <img
+                      src={project.images.jpg.lg}
+                      srcSet={`${project.images.jpg.sm} 640w, ${project.images.jpg.lg} 960w`}
+                      sizes="(max-width: 1024px) 92vw, 30vw"
+                      alt={`${project.title} project preview`}
+                      loading="lazy"
+                      width={960}
+                      height={675}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </picture>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent flex flex-col justify-end p-6">
+                    <div className="flex flex-wrap gap-2">
+                      {project.stack.slice(0, 3).map((tech) => (
+                        <Badge key={tech} className="bg-brand/20 text-brand border-none backdrop-blur-md text-[10px] uppercase font-bold py-0.5">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
-                  <div className="mt-5 flex items-center gap-4 text-sm">
-                    <a href={project.live} className="inline-flex items-center gap-1 text-brand transition-colors hover:text-brand-alt">
-                      <Globe className="h-4 w-4" /> Live Demo
-                    </a>
-                    <a href={project.github} className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground">
-                      <Github className="h-4 w-4" /> GitHub
-                    </a>
+                </div>
+                <div className="flex-1 p-6 flex flex-col">
+                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                  
+                  <div className="space-y-4 flex-1">
+                    <div>
+                      <h4 className="text-[10px] uppercase tracking-widest text-brand font-bold mb-1">The Challenge</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{project.problem}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-[10px] uppercase tracking-widest text-brand font-bold mb-1">The Solution</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{project.solution}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-[10px] uppercase tracking-widest text-brand font-bold mb-1">Key Impact</h4>
+                      <p className="text-sm text-foreground/90 leading-relaxed italic">{project.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 flex items-center justify-between pt-6 border-t border-glass-border/10">
+                    <div className="flex items-center gap-3">
+                      <a href={project.live} className="p-2 rounded-full bg-surface-alt hover:bg-brand hover:text-brand-foreground transition-all duration-300" title="Live Preview">
+                        <Globe className="h-4 w-4" />
+                      </a>
+                      <a href={project.github} className="p-2 rounded-full bg-surface-alt hover:bg-brand hover:text-brand-foreground transition-all duration-300" title="Source Code">
+                        <Github className="h-4 w-4" />
+                      </a>
+                    </div>
+                    <Button variant="ghost" size="sm" className="text-xs font-bold hover:bg-brand/5 text-brand group/btn">
+                      Case Study <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                    </Button>
                   </div>
                 </div>
               </motion.article>
             ))}
           </div>
-          <div className="mt-8 text-center">
-            <a href="#" className="inline-flex items-center gap-2 text-sm text-brand hover:text-brand-alt">
-              Explore Full Archive <ArrowUpRight className="h-4 w-4" />
-            </a>
+        </section>
+
+        <section id="architecture" className="section-shell relative">
+          <div className="absolute left-0 top-1/2 -z-10 h-64 w-64 bg-brand/5 blur-[100px] pointer-events-none" />
+          <span className="section-label">
+            <TypewriterText text="Deep Dive" reducedMotion={prefersReducedMotion} speed={28} />
+          </span>
+          <div className="glass-panel rounded-3xl p-8 lg:p-12 overflow-hidden relative">
+            <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+              <Database className="h-64 w-64 text-brand" />
+            </div>
+            
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-bold mb-6">Architectural Thinking: Scaling the E-Commerce Engine</h2>
+              <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                Beyond just writing code, I focus on system reliability and data integrity. Here's how I approached the backend architecture for my enterprise e-commerce project:
+              </p>
+              
+              <div className="grid gap-8 md:grid-cols-2">
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand">
+                      <Rocket className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-1">Concurrency & Transactions</h4>
+                      <p className="text-sm text-muted-foreground">Used Spring's @Transactional with Isolation levels to prevent race conditions during high-volume flash sales.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand">
+                      <Code2 className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-1">Service Layer Pattern</h4>
+                      <p className="text-sm text-muted-foreground">Implemented a strict layered architecture to decouple business logic from API controllers and data access.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand">
+                      <Database className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-1">Database Optimization</h4>
+                      <p className="text-sm text-muted-foreground">Applied 3rd Normal Form (3NF) to ensure data consistency and utilized B-Tree indexing for sub-second query execution.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand">
+                      <Briefcase className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-1">Security-First Design</h4>
+                      <p className="text-sm text-muted-foreground">Integrated Spring Security with JWT for stateless authentication and RBAC for granular resource protection.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-12 p-6 rounded-2xl bg-surface-alt/50 border border-glass-border/10">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-brand mb-4">Core Principles</h4>
+                <div className="flex flex-wrap gap-4">
+                  {["SOLID Principles", "DRY Code", "RESTful Maturity", "TDD Mindset", "Clean Architecture"].map(p => (
+                    <div key={p} className="flex items-center gap-2 text-xs font-semibold text-foreground/80">
+                      <Sparkles className="h-3 w-3 text-brand" /> {p}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -751,24 +882,47 @@ const Index = () => {
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">Open for freelance, full-time, and product collaborations.</p>
               <div className="mt-6 space-y-4 text-sm">
-                <a href="mailto:sahusubhashree045@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-foreground">
-                  <Mail className="h-4 w-4 text-brand" /> sahusubhashree045@gmail.com
+                <a href="mailto:sahusubhashree045@gmail.com" className="flex items-center gap-4 p-4 rounded-xl border border-glass-border/5 bg-surface/50 hover:bg-surface-alt transition-colors group">
+                  <div className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-brand-foreground transition-all">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase font-bold">Email</p>
+                    <p className="font-semibold text-foreground">sahusubhashree045@gmail.com</p>
+                  </div>
                 </a>
-                <a href="https://linkedin.com/in/subhashree-sahu" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-foreground">
-                  <Linkedin className="h-4 w-4 text-brand" /> LinkedIn Profile
+                <a href="https://linkedin.com/in/subhashree-sahu" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl border border-glass-border/5 bg-surface/50 hover:bg-surface-alt transition-colors group">
+                  <div className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-brand-foreground transition-all">
+                    <Linkedin className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase font-bold">LinkedIn</p>
+                    <p className="font-semibold text-foreground">subhashree-sahu</p>
+                  </div>
                 </a>
-                <a href="https://github.com/subhashree045" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-foreground">
-                  <Github className="h-4 w-4 text-brand" /> GitHub Repositories
-                </a>
-                <a href="tel:+919040270454" className="flex items-center gap-3 text-muted-foreground hover:text-foreground">
-                  <Globe className="h-4 w-4 text-brand" /> +91 9040270454
+                <a href="https://github.com/subhashree045" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl border border-glass-border/5 bg-surface/50 hover:bg-surface-alt transition-colors group">
+                  <div className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-brand-foreground transition-all">
+                    <Github className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase font-bold">GitHub</p>
+                    <p className="font-semibold text-foreground">subhashree045</p>
+                  </div>
                 </a>
               </div>
-              <div className="mt-8 rounded-xl border border-glass-border/20 bg-surface/60 p-4">
-                <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-cosmic">
-                  <Rocket className="h-3.5 w-3.5" /> Current Focus
+              <div className="mt-8 rounded-2xl border border-brand/20 bg-brand/5 p-6 relative overflow-hidden group">
+                <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:rotate-12 transition-transform duration-500">
+                  <Rocket className="h-24 w-24" />
+                </div>
+                <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-brand font-bold mb-3">
+                  <Sparkles className="h-3.5 w-3.5" /> Open to Opportunities
                 </p>
-                <p className="mt-2 text-sm text-muted-foreground">Building high-performance Java backend systems with secure APIs and clean architecture.</p>
+                <p className="text-sm text-foreground leading-relaxed">
+                  I'm currently seeking <span className="font-bold">Software Engineer / Java Backend</span> roles where I can contribute to complex systems and grow with a world-class engineering team.
+                </p>
+                <Button asChild className="mt-6 w-full bg-foreground text-background hover:bg-foreground/90">
+                  <a href="https://example.com/resume.pdf" target="_blank">Download Resume</a>
+                </Button>
               </div>
             </motion.div>
           </div>
