@@ -491,12 +491,12 @@ const Index = () => {
         <section className="cosmic-grid relative min-h-screen pt-28">
           <div className="pointer-events-none absolute inset-0 bg-hero-radial" />
           <div className="section-shell grid items-center gap-14 lg:grid-cols-2">
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }}>
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }} className="text-center lg:text-left">
               <Badge className="mb-5 border border-glass-border/20 bg-surface/70 text-brand">Welcome to my Universe</Badge>
-              <h1 className="text-4xl font-extrabold leading-tight md:text-6xl">
+              <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl md:text-6xl">
                 <TypewriterText text="Backend Systems Engineer" reducedMotion={prefersReducedMotion} speed={46} />
               </h1>
-              <p className="mono-code mt-4 flex min-h-8 items-center gap-2 text-base text-muted-foreground md:text-lg">
+              <p className="mono-code mt-4 flex min-h-8 items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-muted-foreground md:text-lg">
                 <span className="rounded border border-glass-border/35 bg-surface/70 px-2 py-0.5 text-xs uppercase tracking-[0.14em] text-brand">
                   {promptLabels[activePhrase % promptLabels.length]}
                 </span>
@@ -504,10 +504,10 @@ const Index = () => {
                 <span>{typedText}</span>
                 <span className={`${prefersReducedMotion ? "" : "animate-blink"} text-brand`}>|</span>
               </p>
-              <p className="mt-6 max-w-xl text-muted-foreground text-lg leading-relaxed">
+              <p className="mt-6 max-w-xl mx-auto lg:mx-0 text-muted-foreground text-base sm:text-lg leading-relaxed">
                 Specializing in <span className="text-foreground font-semibold">Spring Boot</span>, <span className="text-foreground font-semibold">Microservices</span>, and <span className="text-foreground font-semibold">High-Performance SQL</span>. I build secure, scalable backend architectures that power modern enterprise applications.
               </p>
-              <div className="mt-8 flex items-center gap-3">
+              <div className="mt-8 flex items-center justify-center lg:justify-start gap-3">
                 <motion.a
                   href="https://github.com/subhashree045"
                   target="_blank"
@@ -540,7 +540,7 @@ const Index = () => {
                   <Mail className="h-5 w-5" />
                 </motion.a>
               </div>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <Button asChild size="lg" className="bg-brand text-brand-foreground shadow-2xl shadow-brand/35 hover:bg-brand/90 transition-all hover:scale-105 rounded-full px-8 font-bold">
                   <a href="#contact">Build My Project <ArrowUpRight className="ml-2 h-4 w-4" /></a>
                 </Button>
@@ -588,16 +588,16 @@ const Index = () => {
           <span className="section-label">
             <TypewriterText text="Discovery" reducedMotion={prefersReducedMotion} speed={30} />
           </span>
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] text-center lg:text-left">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
-              <h2 className="text-3xl font-bold md:text-4xl">
+              <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl">
                 <TypewriterText text="Engineering products where performance meets imagination." reducedMotion={prefersReducedMotion} speed={18} />
               </h2>
-              <p className="mt-5 text-muted-foreground">
+              <p className="mt-5 text-muted-foreground mx-auto lg:mx-0 max-w-2xl">
                 I specialize in Java, SQL, and Spring ecosystem technologies with proficiency in layered architecture, role-based access control, and transaction management.
                 Seeking a backend engineering role to deliver scalable, production-ready systems.
               </p>
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="mt-8 grid gap-3 grid-cols-2 sm:grid-cols-3">
                 {realisticCounters.map((counter, index) => (
                   <motion.div
                     key={counter.label}
@@ -790,18 +790,18 @@ const Index = () => {
           <span className="section-label">
             <TypewriterText text="Deep Dive" reducedMotion={prefersReducedMotion} speed={28} />
           </span>
-          <div className="glass-panel rounded-3xl p-8 lg:p-12 overflow-hidden relative">
-            <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-              <Database className="h-64 w-64 text-brand" />
+          <div className="glass-panel rounded-3xl p-6 sm:p-8 lg:p-12 overflow-hidden relative">
+            <div className="absolute top-0 right-0 p-8 opacity-5 lg:opacity-10 pointer-events-none">
+              <Database className="h-40 w-40 lg:h-64 lg:w-64 text-brand" />
             </div>
             
-            <div className="max-w-3xl">
-              <h2 className="text-3xl font-bold mb-6">Architectural Thinking: Scaling the E-Commerce Engine</h2>
-              <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+            <div className="max-w-3xl text-center lg:text-left">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Architectural Thinking: Scaling the E-Commerce Engine</h2>
+              <p className="text-muted-foreground mb-8 text-base sm:text-lg leading-relaxed">
                 Beyond just writing code, I focus on system reliability and data integrity. Here's how I approached the backend architecture for my enterprise e-commerce project:
               </p>
               
-              <div className="grid gap-8 md:grid-cols-2">
+              <div className="grid gap-8 md:grid-cols-2 text-left">
                 <div className="space-y-6">
                   <div className="flex gap-4">
                     <div className="flex-shrink-0 h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand">
