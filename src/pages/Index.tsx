@@ -415,18 +415,18 @@ const Index = () => {
       <div className="fixed top-0 left-0 right-0 h-1 bg-brand/30 z-[100] origin-left scale-x-0" id="scroll-progress" />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/15 bg-background/70 backdrop-blur-xl">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:px-8">
-          <a href="#" className="text-sm font-semibold uppercase tracking-[0.2em] text-cosmic story-link">
-            SS
+          <a href="#" className="text-xl font-bold uppercase tracking-[0.3em] text-cosmic story-link hover:scale-105 transition-transform duration-300">
+            Subh.
           </a>
-          <nav className="hidden items-center gap-6 md:flex">
+          <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((item) => (
               <motion.a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                whileHover={prefersReducedMotion ? undefined : { y: -2, scale: 1.02 }}
-                whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 350, damping: 22 }}
+                className="text-base font-medium text-muted-foreground tracking-wide transition-all hover:text-brand hover:scale-110 active:scale-95"
+                whileHover={prefersReducedMotion ? undefined : { y: -3 }}
+                whileTap={prefersReducedMotion ? undefined : { scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 {item.label}
               </motion.a>
@@ -443,7 +443,7 @@ const Index = () => {
             >
               {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
-            <Button asChild size="sm" className="bg-brand text-brand-foreground hover:bg-brand/90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand/20">
+            <Button asChild size="lg" className="bg-brand text-brand-foreground hover:bg-brand/90 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand/25 px-6 font-bold text-base tracking-tight rounded-full">
               <a href="#contact">Hire Me</a>
             </Button>
           </div>
@@ -504,10 +504,10 @@ const Index = () => {
                 </motion.a>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Button asChild size="lg" className="bg-brand text-brand-foreground shadow-[0_0_30px_hsl(var(--brand)/0.35)] hover:bg-brand/90 transition-all hover:scale-105">
+                <Button asChild size="lg" className="bg-brand text-brand-foreground shadow-2xl shadow-brand/35 hover:bg-brand/90 transition-all hover:scale-105 rounded-full px-8 font-bold">
                   <a href="#contact">Build My Project <ArrowUpRight className="ml-2 h-4 w-4" /></a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-glass-border/25 bg-surface/60 hover:bg-surface-alt backdrop-blur-sm">
+                <Button asChild variant="outline" size="lg" className="border-glass-border/25 bg-surface/60 hover:bg-surface-alt backdrop-blur-sm rounded-full px-8 font-semibold">
                   <a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer">
                     Download Resume
                   </a>
