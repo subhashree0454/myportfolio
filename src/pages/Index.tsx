@@ -467,33 +467,63 @@ const Index = () => {
           initial={{ opacity: 0, x: "100%" }}
           animate={{ opacity: isMobileMenuOpen ? 1 : 0, x: isMobileMenuOpen ? 0 : "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-2xl md:hidden"
+          className="fixed inset-0 z-[60] bg-background/98 md:hidden"
         >
-          <nav className="flex flex-col items-center justify-center h-full gap-8 p-6">
-            {navLinks.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-2xl font-bold tracking-[0.1em] text-foreground hover:text-brand"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
-            <Button asChild size="lg" className="mt-4 bg-brand text-brand-foreground rounded-full px-12 font-bold w-full max-w-xs shadow-xl shadow-brand/20">
-              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Let's Connect</a>
-            </Button>
-          </nav>
+          <div className="flex flex-col h-full">
+            <div className="flex items-center justify-between p-6 h-16 border-b border-glass-border/10">
+              <span className="text-xl font-bold uppercase tracking-[0.3em] text-cosmic">Subh.</span>
+              <Button size="icon" variant="ghost" onClick={() => setIsMobileMenuOpen(false)}>
+                <X className="h-6 w-6" />
+              </Button>
+            </div>
+            <nav className="flex flex-col items-center justify-center flex-1 gap-8 p-6">
+              {navLinks.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-3xl font-bold tracking-[0.1em] text-foreground hover:text-brand active:scale-90 transition-transform"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <Button asChild size="lg" className="mt-8 bg-brand text-brand-foreground rounded-full px-12 font-bold w-full max-w-xs shadow-2xl shadow-brand/30">
+                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Let's Connect</a>
+              </Button>
+            </nav>
+          </div>
         </motion.div>
       </header>
+
+      {/* Modern Floating Bottom Nav for Mobile Reachability */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] w-full max-w-[92vw] sm:max-w-sm md:hidden">
+        <div className="glass-panel border-glass-border/20 bg-background/60 backdrop-blur-2xl rounded-full p-1.5 flex items-center justify-around shadow-2xl shadow-black/40">
+          {navLinks.slice(0, 4).map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="flex flex-col items-center gap-1 p-1.5 text-muted-foreground hover:text-brand active:scale-90 transition-all font-bold"
+            >
+              <span className="text-[9px] uppercase tracking-tighter">{link.label}</span>
+            </a>
+          ))}
+          <div className="h-6 w-px bg-glass-border/20 mx-1" />
+          <a
+            href="#contact"
+            className="flex items-center justify-center h-9 w-9 rounded-full bg-brand text-brand-foreground shadow-lg shadow-brand/20 active:scale-90 transition-all"
+          >
+            <Mail className="h-4.5 w-4.5" />
+          </a>
+        </div>
+      </div>
 
       <main>
         <section className="cosmic-grid relative min-h-screen pt-28">
           <div className="pointer-events-none absolute inset-0 bg-hero-radial" />
           <div className="section-shell grid items-center gap-14 lg:grid-cols-2">
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }} className="text-center lg:text-left">
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }} className="text-center lg:text-left px-2 sm:px-0">
               <Badge className="mb-5 border border-glass-border/20 bg-surface/70 text-brand">Welcome to my Universe</Badge>
-              <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl md:text-6xl">
+              <h1 className="text-2xl font-extrabold leading-tight sm:text-4xl md:text-6xl lg:text-7xl tracking-tighter">
                 <TypewriterText text="Backend Systems Engineer" reducedMotion={prefersReducedMotion} speed={46} />
               </h1>
               <p className="mono-code mt-4 flex min-h-8 items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-muted-foreground md:text-lg">
@@ -507,12 +537,12 @@ const Index = () => {
               <p className="mt-6 max-w-xl mx-auto lg:mx-0 text-muted-foreground text-base sm:text-lg leading-relaxed">
                 Specializing in <span className="text-foreground font-semibold">Spring Boot</span>, <span className="text-foreground font-semibold">Microservices</span>, and <span className="text-foreground font-semibold">High-Performance SQL</span>. I build secure, scalable backend architectures that power modern enterprise applications.
               </p>
-              <div className="mt-8 flex items-center justify-center lg:justify-start gap-3">
+              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3">
                 <motion.a
                   href="https://github.com/subhashree0454"
                   target="_blank"
                   rel="noreferrer"
-                  className="glass-panel hover-scale rounded-xl p-3 text-foreground"
+                  className="glass-panel hover-scale rounded-xl p-2.5 sm:p-3 text-foreground"
                   whileHover={prefersReducedMotion ? undefined : { y: -4, rotate: -2 }}
                   whileTap={prefersReducedMotion ? undefined : { scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 320, damping: 20 }}
@@ -523,7 +553,7 @@ const Index = () => {
                   href="https://www.linkedin.com/in/subhashreesahu705026287/"
                   target="_blank"
                   rel="noreferrer"
-                  className="glass-panel hover-scale rounded-xl p-3 text-foreground"
+                  className="glass-panel hover-scale rounded-xl p-2.5 sm:p-3 text-foreground"
                   whileHover={prefersReducedMotion ? undefined : { y: -4, rotate: 2 }}
                   whileTap={prefersReducedMotion ? undefined : { scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 320, damping: 20 }}
@@ -532,7 +562,7 @@ const Index = () => {
                 </motion.a>
                 <motion.a
                   href="mailto:sahusubhashree045@gmail.com"
-                  className="glass-panel hover-scale rounded-xl p-3 text-foreground"
+                  className="glass-panel hover-scale rounded-xl p-2.5 sm:p-3 text-foreground"
                   whileHover={prefersReducedMotion ? undefined : { y: -4, rotate: -1.5 }}
                   whileTap={prefersReducedMotion ? undefined : { scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 320, damping: 20 }}
@@ -566,7 +596,7 @@ const Index = () => {
                   <TypewriterText text="developer.ts" reducedMotion={prefersReducedMotion} speed={28} />
                 </span>
               </div>
-              <pre className="overflow-x-auto text-brand">
+              <pre className="overflow-x-auto text-brand custom-scrollbar">
 {terminalSnippetLines.map((line, index) => (
                 <div key={`${line}-${index}`} className="leading-7">
                   <span className="mr-2 text-muted-foreground">$</span>
@@ -597,7 +627,7 @@ const Index = () => {
                 I specialize in Java, SQL, and Spring ecosystem technologies with proficiency in layered architecture, role-based access control, and transaction management.
                 Seeking a backend engineering role to deliver scalable, production-ready systems.
               </p>
-              <div className="mt-8 grid gap-3 grid-cols-2 sm:grid-cols-3">
+              <div className="mt-8 grid gap-3 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3">
                 {realisticCounters.map((counter, index) => (
                   <motion.div
                     key={counter.label}
@@ -678,7 +708,7 @@ const Index = () => {
           <span className="section-label">
             <TypewriterText text="Technical Arsenal" reducedMotion={prefersReducedMotion} speed={30} />
           </span>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4 px-2 sm:px-0">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 px-1 sm:px-0">
             {skillGroups.map((group, idx) => (
               <motion.div
                 key={group.label}
@@ -710,7 +740,7 @@ const Index = () => {
           <span className="section-label">
             <TypewriterText text="Featured Creations" reducedMotion={prefersReducedMotion} speed={26} />
           </span>
-          <div className="mt-4 grid gap-8 lg:grid-cols-3">
+          <div className="mt-4 grid gap-6 sm:gap-8 lg:grid-cols-3">
             {projects.map((project, idx) => (
               <motion.article
                 key={project.title}
@@ -966,7 +996,7 @@ const Index = () => {
         </section>
       </main>
 
-      <footer className="border-t border-glass-border/15 py-10">
+      <footer className="border-t border-glass-border/15 py-10 pb-[calc(2.5rem+env(safe-area-inset-bottom)+5rem)] md:pb-10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center md:justify-between md:px-8">
           <div>
              <p className="text-lg font-semibold text-cosmic">
