@@ -520,7 +520,7 @@ const Index = () => {
                   <Github className="h-5 w-5" />
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com/in/subhashree-sahu"
+                  href="https://www.linkedin.com/in/subhashreesahu705026287/"
                   target="_blank"
                   rel="noreferrer"
                   className="glass-panel hover-scale rounded-xl p-3 text-foreground"
@@ -928,13 +928,13 @@ const Index = () => {
                     <p className="font-semibold text-foreground">sahusubhashree045@gmail.com</p>
                   </div>
                 </a>
-                <a href="https://linkedin.com/in/subhashree-sahu" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl border border-glass-border/5 bg-surface/50 hover:bg-surface-alt transition-colors group">
+                <a href="https://www.linkedin.com/in/subhashreesahu705026287/" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl border border-glass-border/5 bg-surface/50 hover:bg-surface-alt transition-colors group">
                   <div className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-brand-foreground transition-all">
                     <Linkedin className="h-5 w-5" />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground uppercase font-bold">LinkedIn</p>
-                    <p className="font-semibold text-foreground">subhashree-sahu</p>
+                    <p className="font-semibold text-foreground">subhashreesahu705026287</p>
                   </div>
                 </a>
                 <a href="https://github.com/subhashree0454" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl border border-glass-border/5 bg-surface/50 hover:bg-surface-alt transition-colors group">
