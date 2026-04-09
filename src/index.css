@@ -149,6 +149,7 @@ All colors MUST be HSL.
       radial-gradient(circle at 80% 8%, hsl(var(--brand-alt) / 0.2), transparent 35%),
       linear-gradient(160deg, hsl(var(--background)), hsl(var(--muted)));
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
   h1,

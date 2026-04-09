@@ -15,6 +15,7 @@ import {
   Send,
   Sparkles,
   Sun,
+  User,
   Wrench,
   X,
 } from "lucide-react";
@@ -41,12 +42,11 @@ import projectOrbit640Webp from "@/assets/project-orbit-640.webp";
 import projectOrbit960Webp from "@/assets/project-orbit-960.webp";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Architecture", href: "#architecture" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about", icon: User },
+  { label: "Experience", href: "#experience", icon: Briefcase },
+  { label: "Skills", href: "#skills", icon: Wrench },
+  { label: "Projects", href: "#projects", icon: Globe },
+  { label: "Architecture", href: "#architecture", icon: Database },
 ];
 
 const timeline = [
@@ -414,7 +414,7 @@ const Index = () => {
   };
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative min-h-screen flex flex-col overflow-x-hidden">
       <div className="fixed top-0 left-0 right-0 h-1 bg-brand/30 z-[100] origin-left scale-x-0" id="scroll-progress" />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/15 bg-background/70 backdrop-blur-xl">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:px-8">
@@ -457,23 +457,26 @@ const Index = () => {
       </header>
 
       {/* Modern Floating Bottom Nav for Mobile Reachability */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] w-full max-w-[92vw] sm:max-w-sm md:hidden">
-        <div className="glass-panel border-glass-border/20 bg-background/60 backdrop-blur-3xl rounded-full p-1.5 flex items-center justify-around shadow-2xl shadow-black/60">
-          {navLinks.slice(0, 5).map((link) => (
+      {/* Modern Floating Bottom Nav for Mobile Reachability */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] w-[90vw] max-w-sm md:hidden">
+        <div className="glass-panel border-glass-border/20 bg-background/60 backdrop-blur-3xl rounded-full p-2 flex items-center justify-around shadow-2xl shadow-black/60">
+          {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="flex flex-col items-center gap-1 p-1.5 text-muted-foreground hover:text-brand active:scale-90 transition-all font-bold"
+              className="flex flex-col items-center justify-center h-10 w-10 text-muted-foreground hover:text-brand active:scale-90 transition-all"
+              aria-label={link.label}
             >
-              <span className="text-[8px] uppercase tracking-tighter">{link.label}</span>
+              <link.icon className="h-5 w-5" />
             </a>
           ))}
           <div className="h-6 w-px bg-glass-border/20 mx-1" />
           <a
             href="#contact"
-            className="flex items-center justify-center h-9 w-9 rounded-full bg-brand text-brand-foreground shadow-lg shadow-brand/20 active:scale-90 transition-all"
+            className="flex items-center justify-center h-10 w-10 rounded-full bg-brand text-brand-foreground shadow-lg shadow-brand/20 active:scale-90 transition-all shrink-0"
+            aria-label="Contact"
           >
-            <Mail className="h-4.5 w-4.5" />
+            <Mail className="h-5 w-5" />
           </a>
         </div>
       </div>
@@ -484,15 +487,15 @@ const Index = () => {
           <div className="section-shell grid items-center gap-14 lg:grid-cols-2">
             <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }} className="text-center lg:text-left px-2 sm:px-0">
               <Badge className="mb-5 border border-glass-border/20 bg-surface/70 text-brand">Welcome to my Universe</Badge>
-              <h1 className="text-2xl font-extrabold leading-tight sm:text-4xl md:text-6xl lg:text-7xl tracking-tighter">
+              <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl md:text-6xl lg:text-7xl tracking-tighter break-words">
                 <TypewriterText text="Backend Systems Engineer" reducedMotion={prefersReducedMotion} speed={46} />
               </h1>
-              <p className="mono-code mt-4 flex min-h-8 items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-muted-foreground md:text-lg">
-                <span className="rounded border border-glass-border/35 bg-surface/70 px-2 py-0.5 text-xs uppercase tracking-[0.14em] text-brand">
+              <p className="mono-code mt-4 flex flex-wrap min-h-8 items-center justify-center lg:justify-start gap-2 text-xs sm:text-base text-muted-foreground md:text-lg">
+                <span className="rounded border border-glass-border/35 bg-surface/70 px-2 py-0.5 text-[10px] sm:text-xs uppercase tracking-[0.14em] text-brand shrink-0">
                   {promptLabels[activePhrase % promptLabels.length]}
                 </span>
                 <span className="text-brand">&gt;</span>
-                <span>{typedText}</span>
+                <span className="break-all">{typedText}</span>
                 <span className={`${prefersReducedMotion ? "" : "animate-blink"} text-brand`}>|</span>
               </p>
               <p className="mt-6 max-w-xl mx-auto lg:mx-0 text-muted-foreground text-base sm:text-lg leading-relaxed">
@@ -531,7 +534,7 @@ const Index = () => {
                   <Mail className="h-5 w-5" />
                 </motion.a>
               </div>
-              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
                 <Button asChild size="lg" className="bg-brand text-brand-foreground shadow-2xl shadow-brand/35 hover:bg-brand/90 transition-all hover:scale-105 rounded-full px-8 font-bold">
                   <a href="#contact">Build My Project <ArrowUpRight className="ml-2 h-4 w-4" /></a>
                 </Button>
@@ -547,7 +550,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mono-code animate-float rounded-3xl border border-glass-border/30 bg-background/95 p-5 text-sm shadow-[0_20px_60px_-35px_hsl(var(--foreground)/0.55)]"
+              className="mono-code animate-float rounded-3xl border border-glass-border/30 bg-background/95 p-4 sm:p-5 text-xs sm:text-sm shadow-[0_20px_60px_-35px_hsl(var(--foreground)/0.55)] w-full max-w-full overflow-hidden"
             >
               <div className="mb-4 flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="rounded border border-glass-border/40 bg-surface px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-brand">
@@ -607,22 +610,22 @@ const Index = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass-panel overflow-hidden rounded-2xl"
+              className="glass-panel overflow-hidden rounded-full aspect-square max-w-[320px] mx-auto lg:ml-auto"
             >
               <picture>
                 <source
                   type="image/webp"
                   srcSet={`${profileImage450Webp} 450w, ${profileImage900Webp} 900w`}
-                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 420px"
+                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 320px"
                 />
                 <img
                   src={profileImage900Jpg}
                   srcSet={`${profileImage450Jpg} 450w, ${profileImage900Jpg} 900w`}
-                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 420px"
+                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 320px"
                   alt="Subhashree Sahu professional portrait"
                   loading="lazy"
                   width={900}
-                  height={1125}
+                  height={900}
                   className="h-full w-full object-cover"
                 />
               </picture>
