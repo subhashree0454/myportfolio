@@ -109,11 +109,11 @@ const skillGroups = [
 const projects = [
   {
     title: "Precision Workout Tracker",
-    problem: "Athletes often struggle to quantify their progress across multi-phase training cycles without complex manual logging.",
-    solution: "Built a Spring Boot performance analytics engine that tracks volumetric training data, personal records, and recovery metrics.",
-    description: "Features a relational schema for exercise-to-muscle group mapping. Implements advanced SQL aggregation for real-time strength progression reporting.",
-    image: "https://images.unsplash.com/photo-1517812971387-97d190161f8a?q=80&w=1200&auto=format",
-    stack: ["Spring Boot", "JPA", "MySQL", "Hibernate"],
+    problem: "Athletes struggle to quantify progress across training cycles without complex manual logging frameworks.",
+    solution: "Engineered a Spring Boot performance engine tracking volumetric data, personal records, and recovery metrics.",
+    description: "Features a relational schema for muscle group mapping and advanced SQL aggregation for real-time strength progression.",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format",
+    stack: ["Spring Boot", "MySQL", "Hibernate", "JPA"],
     live: "#",
     github: "https://github.com/subhashree0454/Workout-Tracker",
   },
@@ -621,7 +621,7 @@ const Index = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass-panel overflow-hidden rounded-full aspect-square max-w-[320px] mx-auto lg:ml-auto"
+              className="glass-panel overflow-hidden rounded-[2.5rem] aspect-square max-w-[450px] mx-auto lg:ml-auto shadow-2xl shadow-brand/10 border-brand/20"
             >
               <picture>
                 <source
