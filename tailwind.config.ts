@@ -131,6 +131,11 @@ export default {
       backgroundImage: {
         "hero-radial": "radial-gradient(circle at 20% 20%, hsl(var(--brand) / 0.16), transparent 35%), radial-gradient(circle at 80% 0%, hsl(var(--brand-alt) / 0.2), transparent 45%)",
       },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        heading: ["Outfit", "Inter", "sans-serif"],
+        mono: ["Fira Code", "monospace"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
