@@ -112,10 +112,7 @@ const projects = [
     problem: "Athletes often struggle to quantify their progress across multi-phase training cycles without complex manual logging.",
     solution: "Built a Spring Boot performance analytics engine that tracks volumetric training data, personal records, and recovery metrics.",
     description: "Features a relational schema for exercise-to-muscle group mapping. Implements advanced SQL aggregation for real-time strength progression reporting.",
-    images: {
-      webp: { sm: projectOrbit640Webp, lg: projectOrbit960Webp },
-      jpg: { sm: projectOrbit640Jpg, lg: projectOrbit960Jpg },
-    },
+    image: "https://images.unsplash.com/photo-1517812971387-97d190161f8a?q=80&w=1200&auto=format",
     stack: ["Spring Boot", "JPA", "MySQL", "Hibernate"],
     live: "#",
     github: "https://github.com/subhashree0454/Workout-Tracker",
@@ -125,10 +122,7 @@ const projects = [
     problem: "Real-time menu management and order tracking are often siloed, leading to synchronization delays in busy restaurant environments.",
     solution: "Engineered a full-stack ordering system using Spring Boot and REST APIs, featuring dynamic category filtering and secure user authentication.",
     description: "Built with a modular Spring architecture. Optimized menu retrieval with PostgreSQL indexing and implemented a responsive JavaScript-driven checkout experience.",
-    images: {
-      webp: { sm: projectNebula640Webp, lg: projectNebula960Webp },
-      jpg: { sm: projectNebula640Jpg, lg: projectNebula960Jpg },
-    },
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200&auto=format",
     stack: ["Spring Boot", "REST API", "PostgreSQL", "JavaScript"],
     live: "https://food-fiesta-spring-boot.vercel.app",
     github: "https://github.com/subhashree0454/food-fiesta-spring-boot",
@@ -138,10 +132,7 @@ const projects = [
     problem: "Tracking high-priority tasks in multi-threaded environments often leads to race conditions and data inconsistency.",
     solution: "Developed a concurrent Task Manager featuring thread-safe operations, progress monitoring, and persistent storage via PostgreSQL.",
     description: "Implements advanced Java concurrency patterns to handle background task processing. Features complex relational mapping for hierarchical task dependencies.",
-    images: {
-      webp: { sm: projectAurora640Webp, lg: projectAurora960Webp },
-      jpg: { sm: projectAurora640Jpg, lg: projectAurora960Jpg },
-    },
+    image: "https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1200&auto=format",
     stack: ["Java", "Multithreading", "PostgreSQL", "REST API"],
     live: "#",
     github: "https://github.com/subhashree0454/Task-Manager",
@@ -151,10 +142,7 @@ const projects = [
     problem: "Standard todo apps lack the security and scalability required for enterprise-level personal management systems.",
     solution: "Architected a production-ready application using JWT-based authentication, Spring Security, and a Thymeleaf server-side rendered frontend.",
     description: "Secure endpoint isolation for user-specific data. Features automated status transitions and comprehensive audit logs for task lifecycles.",
-    images: {
-      webp: { sm: projectOrbit640Webp, lg: projectOrbit960Webp },
-      jpg: { sm: projectOrbit640Jpg, lg: projectOrbit960Jpg },
-    },
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1200&auto=format",
     stack: ["Spring Boot", "JWT", "Spring Security", "PostgreSQL"],
     live: "#",
     github: "https://github.com/subhashree0454/todo-app-springboot",
@@ -164,10 +152,7 @@ const projects = [
     problem: "Static portfolios fail to engage potential recruiters or showcase the developer's mastery over modern interactive frameworks.",
     solution: "Built a high-performance, dark-mode-first portfolio using React and Framer Motion, optimized for accessibility and SEO.",
     description: "Features custom cursor logic, glassmorphism design tokens, and optimized LCP through WebP asset delivery and component lazy-loading.",
-    images: {
-      webp: { sm: projectNebula640Webp, lg: projectNebula960Webp },
-      jpg: { sm: projectNebula640Jpg, lg: projectNebula960Jpg },
-    },
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format",
     stack: ["TypeScript", "React", "Framer Motion", "Tailwind"],
     live: "https://subhportfolio.vercel.app",
     github: "https://github.com/subhashree0454/myportfolio",
@@ -741,23 +726,14 @@ const Index = () => {
                 className="glass-panel group flex flex-col hover-scale overflow-hidden rounded-3xl border-brand/5 hover:border-brand/20 transition-all duration-500"
               >
                 <div className="relative h-56 overflow-hidden">
-                  <picture>
-                    <source
-                      type="image/webp"
-                      srcSet={`${project.images.webp.sm} 640w, ${project.images.webp.lg} 960w`}
-                      sizes="(max-width: 1024px) 92vw, 30vw"
-                    />
                     <img
-                      src={project.images.jpg.lg}
-                      srcSet={`${project.images.jpg.sm} 640w, ${project.images.jpg.lg} 960w`}
-                      sizes="(max-width: 1024px) 92vw, 30vw"
+                      src={project.image}
                       alt={`${project.title} project preview`}
                       loading="lazy"
                       width={960}
                       height={675}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent flex flex-col justify-end p-6">
                     <div className="flex flex-wrap gap-2">
                       {project.stack.slice(0, 3).map((tech) => (
