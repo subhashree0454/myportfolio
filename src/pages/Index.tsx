@@ -7,6 +7,7 @@ import {
   Database,
   Github,
   Globe,
+  Instagram,
   Linkedin,
   Mail,
   Menu,
@@ -529,11 +530,22 @@ const Index = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="glass-panel hover-scale rounded-xl p-2.5 sm:p-3 text-foreground"
-                  whileHover={prefersReducedMotion ? undefined : { y: -4, rotate: 2 }}
+                  whileHover={prefersReducedMotion ? undefined : { y: -4, rotate: 1.5 }}
                   whileTap={prefersReducedMotion ? undefined : { scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 320, damping: 20 }}
                 >
                   <Linkedin className="h-5 w-5" />
+                </motion.a>
+                <motion.a
+                  href="https://www.instagram.com/subhashre_sahu"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="glass-panel hover-scale rounded-xl p-2.5 sm:p-3 text-foreground"
+                  whileHover={prefersReducedMotion ? undefined : { y: -4, rotate: -1.5 }}
+                  whileTap={prefersReducedMotion ? undefined : { scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 320, damping: 20 }}
+                >
+                  <Instagram className="h-5 w-5" />
                 </motion.a>
                 <motion.a
                   href="mailto:sahusubhashree045@gmail.com"
@@ -940,6 +952,15 @@ const Index = () => {
                   <div>
                     <p className="text-xs text-muted-foreground uppercase font-bold">GitHub</p>
                     <p className="font-semibold text-foreground">subhashree0454</p>
+                  </div>
+                </a>
+                <a href="https://www.instagram.com/subhashre_sahu" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl border border-glass-border/5 bg-surface/50 hover:bg-surface-alt transition-colors group">
+                  <div className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-brand-foreground transition-all">
+                    <Instagram className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase font-bold">Instagram</p>
+                    <p className="font-semibold text-foreground">subhashre_sahu</p>
                   </div>
                 </a>
               </div>
