@@ -108,6 +108,19 @@ const skillGroups = [
 
 const projects = [
   {
+    title: "Precision Workout Tracker",
+    problem: "Athletes often struggle to quantify their progress across multi-phase training cycles without complex manual logging.",
+    solution: "Built a Spring Boot performance analytics engine that tracks volumetric training data, personal records, and recovery metrics.",
+    description: "Features a relational schema for exercise-to-muscle group mapping. Implements advanced SQL aggregation for real-time strength progression reporting.",
+    images: {
+      webp: { sm: projectOrbit640Webp, lg: projectOrbit960Webp },
+      jpg: { sm: projectOrbit640Jpg, lg: projectOrbit960Jpg },
+    },
+    stack: ["Spring Boot", "JPA", "MySQL", "Hibernate"],
+    live: "#",
+    github: "https://github.com/subhashree0454/Workout-Tracker",
+  },
+  {
     title: "Food Fiesta Dashboard",
     problem: "Real-time menu management and order tracking are often siloed, leading to synchronization delays in busy restaurant environments.",
     solution: "Engineered a full-stack ordering system using Spring Boot and REST APIs, featuring dynamic category filtering and secure user authentication.",
